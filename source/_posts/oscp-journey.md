@@ -51,7 +51,8 @@ Try to get the exploit to work with just 40 minutes to go. Unable to get it to e
 24 hours - 65 points
 <img src="https://media.giphy.com/media/9oF7EAvaFUOEU/giphy.gif" width="500" height="300"/>
 
-I write both my exam report and lab report, submit it by 2 AM the next day, hoping to get the 5 bonus points and clear the certification. Surprisingly, I didn't have to wait long and get my result in 2 days. I've successfully obtained the certification!
+## Reporting
+I write both my exam report and lab report, submit it by 2:30 AM the next day, hoping to get the 5 bonus points and clear the certification. Surprisingly, I didn't have to wait long and get my result in 2 days. I've successfully obtained the certification!
 
 <img src="https://media.giphy.com/media/l4EpkVLqUj8BI7OV2/giphy.gif" width="500" height="300" />
 

