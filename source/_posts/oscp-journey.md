@@ -5,14 +5,29 @@ tags: [oscp]
 ---
 
 # OSCP Journey
+From a persistent n00b who couldn't even hack a medium difficulty machine on his own to cracking OSCP in 4 months!
 
-## D-Day
-This post is just the story of my exam day and some dos and don'ts. Will make a blog post of it for easy access, and on how I cleared OSCP while being a total n00b.
+## Background
+I wanted to do the PwK course and clear OSCP since past couple years but haven't been able to due to reasons. Two of my certifications were going to expire in August '20, and I had to do a certification to renew them, a perfect opportunity. Before I started with the PwK course, I had very little experience with hacking or even CTF for that matter. My college studies or previous certifications weren't of any help here either. But I decided to take a deep breath, and dove in.
 
+## Prep
+My course and lab access started in January, it was the old course, I completed all of my exercises and was only able to crack 14 machines in the Public Network. Not good by any standards, but it was just a start. I was glad I was able to do enough to make my lab report. Once my lab access got over, I took a break of 2 months, focussed on college.
+
+Two months later, in March, I decided to start preparing for the exam. I came across [OSCP-like machines list](https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit) by TJ_Null which looked quite promising and so signed-up for the HackTheBox VIP platform.
+
+I went through the list, watched IppSec's video of the machine I'm targetting, and hacked it and continued that for almost every machine. I made a report for each machine I hacked and documented each step including why certain steps were taken and the reasoning behind it. This was essential as I was under a time crunch, needed to build my hacking methodology, and make it as robust as I possibly can. Apart from watching IppSec's video, I read walkthroughs by various people of the same machine to get more information or learnings out of it. 
+
+And that was it, and that's all the practice you need.
+**HACK EVERY SINGLE MACHINE ON THAT LIST!!!** You'll thank yourself later.
+
+## Exam
 I had scheduled my exam at 3.30 AM, everyone is asleep, can peacefully work on my stuff without any external disturbances. Proctoring started at 3.15 AM, took a little time but went smoothly. Started with my exam at 3.45 AM.
-I decide to first get done with Buffer Overflow, easy 25 points. Start AutoRecon on the other 25 point machine in the background. Run first few commands, and suddenly no output from the debugging machine, completely frozen. Huh? Maybe some issue with rdesktop, try to kill it, it won't die. Check my connection, seems to be re-connecting. Ugh. Kill the connection, try to connect to the VPN again, it's trying to connect. I look down at my taskbar at the internet connection icon, and there it was my nightmare, my internet has crashed. It's 4 AM, I won't be getting any support from the ISPs' end. FUCK. I take my mobile, turn the hotspot on, connect to the proctoring software, inform the proctor that my internet has crashed and I'm changing my location. They inform me they would pause the VPN, I agree.
+I decide to first get done with Buffer Overflow, easy 25 points. Start AutoRecon on the other 25 point machine in the background. Run first few commands, and suddenly no output from the debugging machine, completely frozen. Huh? Maybe some issue with rdesktop, try to kill it, it won't die. Check my connection, seems to be re-connecting. Ugh. Kill the connection, try to connect to the VPN again, it's trying to connect. I look down at my taskbar at the internet connection icon, and there it was my worst nightmare, the internet has crashed. It's 4 AM, I won't be getting any support from the ISPs' end. FUCK. I take my mobile, turn the hotspot on, connect to the proctoring software, inform the proctor that my internet has crashed and I'm changing my location. They inform me they would pause the VPN, I agree.
 
-I call a bunch of folks where I could continue the rest of the exam, some places are completely locked down, can't go there. Can go to a relative's place, 50 minutes far by drive, the building has a bunch of Covid-19 cases in there, and a whole lot in a hospital near that place. Fuck me. Look for cabs, luckily I find one, book it immediately, pack my shit. It's 5 AM, I've got nothing, chances are I could catch the virus, not the best of odds.
+I called a bunch of folks where I could continue the rest of the exam from, some places are completely locked down, can't go there. Can go to a relative's place, 50 minutes far by car, their building has a bunch of Covid-19 cases in there, and a whole lot in a hospital near that place. Fuck me. Look for cabs, luckily I find one, book it immediately, pack my shit. It's 5 AM, I've got nothing, chances are I could catch the virus, not the best of odds.
+
+<img src="https://media.giphy.com/media/xU1spRleFHmtjvskXw/giphy.gif" width="300" height="250" />
+
 ### Cracking BOF - 25 points
 It's 6.20, I finally reach the place, sanitize myself, unpack. Show the proctor my environment again, get the green light to continue with my exam. Start AutoRecon on 25 point again, focus on BOF, crack it by 7 AM. 25 points in 3.5 hours, 45 points more, any 3 more boxes to crack. Time to focus on the other 25 point box, luckily AutoRecon is done. Run AutoRecon on a 20 point machine. Check my directory for the 25 point recon results....it's gone. The new scan probably overwrote it. *Internal screaming*. Chuck AutoRecon entirely, move to nmapAutomator. Best move so far.
 
