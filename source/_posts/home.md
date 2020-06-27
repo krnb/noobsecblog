@@ -13,6 +13,6 @@ Contact details available [here](/whoami/#Connect-With-Me)
 
 ## To Do
 - [ ] Share my OSCP Story
-- [ ] Share OSCP Enumeration Process
+- [x] Share OSCP Enumeration Process
 - [ ] Add BOF
 - [ ] Add Linux Post Exploitation
