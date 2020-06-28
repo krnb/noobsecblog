@@ -17,3 +17,4 @@ Contact details available [here](/whoami/#Connect-With-Me)
 - [x] Add BOF
 - [ ] Add Linux post exploitation
 - [ ] Add web stuff
+- [ ] HTB OSCP-like walkthroughs

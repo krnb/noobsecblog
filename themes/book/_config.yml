@@ -7,7 +7,7 @@ zoom_image: true
 codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
-  highlight_theme: night
+  highlight_theme: night bright
 
 comments:
   utterances:
@@ -28,4 +28,4 @@ comments:
     labels: 'gitalk' # GitHub issue labels
     distractionFreeMode: true
 
-google_analytics: # UA-XXXXX-Y
+google_analytics: UA-171056200-1
