@@ -8,7 +8,7 @@ tags: [oscp, cheatsheet, windows]
 
 So you got a shell, what *now*?
 
-This post will help you escalate privileges further as well as with local enumeration.
+This post will help you with local enumeration as well as escalate your privileges further.
 
 Usage of different enumeration scripts and tools is encouraged, my favourite is WinPEAS.
 WinPeas can be found [here](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS)
