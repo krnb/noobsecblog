@@ -5,15 +5,15 @@
 # Site
 title: n00bsec
 subtitle: ''
-description: ''
-keywords:
+description: 'A place to share my learnings and hacker (mis)adventures with the world'
+keywords: learn, hacker, oscp, offensive security, offsec, hacking, information security, infosec
 author: Karan Bhayani
 language: en
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://noobsec.net
 root: /
 permalink: :title/
 permalink_defaults:

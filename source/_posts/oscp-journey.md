@@ -49,7 +49,7 @@ Ran the local enumeration script on the system, pretty quickly identified a lot 
 Try to get the exploit to work with just 40 minutes to go. Unable to get it to execute as per what I want. Something's off. Try to follow the exploit steps manually, can follow them, but it's not working, maybe a rabbit hole? Nope, it's not, it is the only thing that stands out. Realize it's based on something, modified that, followed the steps again. Get a message on the side from proctor that my time is up and that VPN has been closed. I couldn't escalate my privileges in time.
 
 24 hours - 65 points
-<img src="https://media.giphy.com/media/9oF7EAvaFUOEU/giphy.gif" width="500" height="300"/>
+<img src="https://media.giphy.com/media/jOpLbiGmHR9S0/giphy.gif" width="500" height="300"/>
 
 ## Reporting
 I write both my exam report and lab report, submit it by 2:30 AM the next day, hoping to get the 5 bonus points and clear the certification. Surprisingly, I didn't have to wait long and get my result in 2 days. I've successfully obtained the certification!

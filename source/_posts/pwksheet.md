@@ -101,7 +101,7 @@ Additional banner grabbing
 
 ## Port 79 - Finger
 
-Run [this link](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum) with following wordlist
+Run [this script](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum) with following wordlist
 ```
 /usr/share/metasploit-framework/data/wordlists/unix_users.txt
 ```
@@ -236,6 +236,21 @@ snmpwalk -c public -v1 $ip
 snmpwalk -c public -v1 $ip $MIB_Value
 
 snmp-check $ip
+```
+## Port 2049 - NFS
+
+``` bash
+# NFS < v4
+# Enumerating shares available, and mount points
+showmount -e $ip
+showmount -a $ip
+
+# Mounting, x = NFS Version
+mount -t nfs -o vers=x $ip:<share> <local_dir>
+
+# On target machine
+# Find mount points on the target where SUID programs and scripts can be run from 
+mount | grep 'nosuid\|noexec'
 ```
 
 ## Shells / Payloads
