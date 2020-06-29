@@ -6,7 +6,7 @@ tags: [oscp, cheatsheet, linux]
 
 # Escaping Jailed Shells
 
-*You can execute in-built shell commands, as well as the ones in your PATH*
+*You can execute built-in shell commands, as well as the ones in your PATH*
 
 ## Enumerate
 * Get environment variables: `env` or `printenv` 
@@ -21,7 +21,7 @@ tags: [oscp, cheatsheet, linux]
 **Research each executable command, look for odd parameters**
 Check out:
 * man pages
-* GTFOBins
+* [GTFOBin](https://gtfobins.github.io/)
 * Vulnerabilities in the command
 
 ## Attack Vectors

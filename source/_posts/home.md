@@ -4,17 +4,15 @@ date: 2020-06-25 17:21:50
 tags:
 ---
 
-# Home page
+# Hello, world!
 
-Hi, welcome to my blog!
+Hello world, welcome to my blog!
+The purpose of this blog is to share my knowledge and things I do with everyone.
 Check out currently available content on the left.
 
 Contact details available [here](/whoami/#Connect-With-Me)
 
-## To Do
-- [x] Share my OSCP Story
-- [x] Share OSCP Enumeration Process
-- [x] Add BOF
-- [ ] Add Linux post exploitation
-- [ ] Add web stuff
+## Coming soon
+- [ ] Linux post exploitation
+- [ ] Web stuff
 - [ ] HTB OSCP-like walkthroughs

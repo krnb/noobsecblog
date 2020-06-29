@@ -8,7 +8,7 @@ tags:
 # **OSCP**
 ---
 * [OSCP Journey](/oscp-journey)
-* [Ultimate Cheatsheet](/pwksheet)
+* [Ultimate Cheatsheet](/oscp-cheatsheet)
 * [Escaping Jailed Shells](/jailbreak)
 * [Windows Post Exploitation](/postexp-windows)
 * [Buffer Overflow](/bof/)
