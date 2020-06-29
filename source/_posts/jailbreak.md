@@ -4,7 +4,7 @@ date: 2020-06-26 13:17:48
 tags: [oscp, cheatsheet, linux]
 ---
 
-# Escaping Jailed Shells
+# Breaking Out Of The Jail
 
 *You can execute built-in shell commands, as well as the ones in your PATH*
 

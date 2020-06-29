@@ -1,5 +1,5 @@
 ---
-title: $whoami
+title: 'root@localhost:~ #whoami'
 date: 2020-06-25 09:00:37
 ---
 
