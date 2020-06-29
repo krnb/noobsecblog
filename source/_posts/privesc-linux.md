@@ -1,10 +1,10 @@
 ---
-title: Linux Post Exploitation
+title: Linux Privilege Escalation
 date: 2020-06-29 16:33:08
 tags: [oscp, linux, cheatsheet, privilege escalation]
 ---
 
-# Linux Post Exploitation
+# Linux Privilege Escalation Cheatsheet
 
 So you got a shell, what *now*?
 This cheatsheet will help you with local enumeration as well as escalate your privilege further

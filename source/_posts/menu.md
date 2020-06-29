@@ -10,6 +10,6 @@ tags:
 * [OSCP Journey](/oscp-journey)
 * [Ultimate Cheatsheet](/oscp-cheatsheet)
 * [Escaping Jailed Shells](/jailbreak)
-* [Windows Post Exploitation](/postexp-windows)
-* [Linux Post Exploitation](/postexp-linux)
+* [Windows Privilege Escalation](/privesc-windows)
+* [Linux Privilege Escalation](/privesc-linux)
 * [Buffer Overflow](/bof/)

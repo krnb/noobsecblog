@@ -531,7 +531,9 @@ Chisel is a port forwarding tool for Linux as well as Windows, works over HTTP a
 .\chisel.exe client KALI_IP:9001 R:KALI_PORT:127.0.0.1:WINDOWS_PORT
 ```
 
-## Complete Post Exploitation
+## Privilege Escalation
 ### Windows
-Local enumeration + Privilege escalation
-For Windows go <a href="/postexp-windows/" target="_blank">here</a>
+Local enumeration + privilege escalation available <a href="/privesc-windows/" target="_blank">here</a>
+
+### Linux
+Local enumeration + privilege escalation available <a href="/privesc-linux/" target="_blank">here</a>
