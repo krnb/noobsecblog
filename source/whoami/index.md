@@ -1,10 +1,11 @@
 ---
-title: Who Am I
+title: $whoami
 date: 2020-06-25 09:00:37
 ---
 
 Hi, my name is Karan Bhayani. I recently graduated with Bachelor's of Technology in IT and MBA-Tech in Business Intelligence & Analytics (if the name of this degree program didn't make sense, it's ok, I don't blame you).
-I like cracking things open and understand them. Currently interested in offensive security and web application security. Apart from my diplomas I've few certifications: OSCP, CompTIA CySA+, and CompTIA Sec+.
+
+I like cracking things open and understanding them. Currently interested in offensive security and web application security. Apart from my diplomas I've a few certifications: OSCP, CompTIA CySA+, and CompTIA Sec+.
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="efaf5918-9119-438c-ab8c-4594b9e6c00c" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
 

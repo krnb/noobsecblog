@@ -1,10 +1,10 @@
 ---
-title: PWK Cheatsheet
+title: OSCP Cheatsheet
 date: 2020-06-25 08:51:22
 tags: [oscp, cheatsheet]
 ---
 
-# PWK / OSCP Cheatsheet
+# OSCP Cheatsheet
 
 ## General Enumeration - Nmap
 
