@@ -4,11 +4,12 @@ date: 2020-06-25 19:05:27
 tags:
 ---
 
-* [$whoami](/whoami)
+* [#whoami](/whoami)
 # **OSCP**
 ---
 * [OSCP Journey](/oscp-journey)
 * [Ultimate Cheatsheet](/oscp-cheatsheet)
 * [Escaping Jailed Shells](/jailbreak)
-* [Windows Post Exploitation](/postexp-windows)
+* [Windows Privilege Escalation](/privesc-windows)
+* [Linux Privilege Escalation](/privesc-linux)
 * [Buffer Overflow](/bof/)
