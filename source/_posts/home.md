@@ -6,7 +6,7 @@ tags:
 
 # Hello, world!
 
-Hello world, welcome to my blog!
+Hi, welcome to my blog!
 The purpose of this blog is to share my knowledge and things I do with everyone.
 Check out currently available content on the left.
 

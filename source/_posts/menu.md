@@ -7,6 +7,7 @@ tags:
 - [#whoami](/whoami)
 
 # **OSCP**
+- [Hack OSCP](/hack-oscp)
 - [OSCP Journey](/oscp-journey)
 - [Ultimate Cheatsheet](/oscp-cheatsheet)
 - [Escaping Jailed Shells](/jailbreak)
