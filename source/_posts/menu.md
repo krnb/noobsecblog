@@ -14,6 +14,7 @@ tags:
 - [Windows Privilege Escalation](/privesc-windows)
 - [Linux Privilege Escalation](/privesc-linux)
 - [Buffer Overflow](/bof/)
-    ## **Web Exploitation**
-    - [File Inclusion](/file-inclusion)
-    - [SQLi](/basic-sqli)
+
+# **Web Exploitation**
+ - [File Inclusion](/file-inclusion)
+ - [SQL Injection - 0x01](/sqli-0x01)
