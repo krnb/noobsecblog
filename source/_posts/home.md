@@ -18,7 +18,8 @@ Nothing is perfect. If you'd like me to add a particular thing somewhere to make
 ## New
 The beginning of an SQL injection series! Check out the first post - [SQL Injection - 0x01](/sqli-0x01)
 
+Disqus, a comment system, has been integrated to the site. I've also enabled the feature to allow guest comments if you do not want to sign up to Disqus. This feature might make it harder for me to get back to you but it's there if you absolutely need it. I'd recommend signing up with Google and then turning on "Do Not Sell My Data" instead of guest commenting. Press Ctrl + Enter (command + enter for Mac? Idk, I've never used it) to get the option to comment as guest.
+
 ## Coming soon
 - [ ] SQL injection - 0x02
 - [ ] HTB OSCP-like walkthroughs
-- [ ] Comment system

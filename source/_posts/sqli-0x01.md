@@ -111,9 +111,9 @@ A web based attack in which the malicious end-user enters an SQL query which wou
 ![DROP Tables. ](/sqli-0x01/exploits_of_a_mom.png)
 <span style="font-size: small;">Credit to <a href="https://xkcd.com/327/" target="_blank">XKCD Comics</a>. If you've never checked them out, YOU SHOULD!</span>
 
-Although destructive and not very beneficial, it's still a SQL injection.
+Considering the above comic, although destructive and not very beneficial, it still is a SQL injection.
 
-When a web application fails to properly sanitize the user input (parameters that are passed to the SQL statement or query), the malicious SQL query will be executed. This query will be executed with the same rights as the web server (in Linux, most probably `www-data`).
+When a web application fails to properly sanitize the user input (parameters that are passed to the SQL statement or query), the malicious SQL query will be executed. This query will be executed with the same rights as the web server.
 
 If a command is being executed on the system via the database server, this command will be executed on the system with the rights of whoever deployed the database server. If MySQL (mysqld) is running as root user, then the commands that will be executed on the system will be as root.
 
@@ -123,9 +123,13 @@ How could I possibly end this post without actually displaying an SQL injection?
 Let's consider the following PHP code of a login page as an example:
 We are passing our input in the `user` and `pass` field
 ``` PHP
-$query = 'SELECT * FROM users WHERE username=$user AND password=$pass';
+# Takes the user input from the login POST request
+$user = $_POST['user'];
+$pass = $_POST['pass'];
+
+$query = "SELECT * FROM users WHERE username=$user AND password=$pass";
 ```
-The user controls the SQL query parameters "username" and "password" because they can potentially send in any value and pass it to those parameters.
+The user controls the SQL query parameters "username" and "password" because they can potentially send in any value and it would be passed on to those parameters.
 
 **Let's consider a legitimate request first**:
 POST login request sent by a legitimate user with `user=admin&pass=amdin` and there's a typo in the password field
@@ -142,7 +146,7 @@ POST login request sent by an attacker with `user='or'1'='1';-- -&pass=lulz`
 
 The SQL query that will be built with that request would be:
 ``` SQL
-SELECT * FROM users WHERE username='or'1'='1';-- - AND password=lulz';
+SELECT * FROM users WHERE username=''or'1'='1';-- - AND password=lulz';
 ```
 
 By sending `'or'1'='1';-- -` in the user field in the POST request, we did not only modify the username parameter but also commented out the rest of the query that was initially present, which is the password parameter of the `WHERE` condition check. 
