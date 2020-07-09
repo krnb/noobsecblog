@@ -19,9 +19,6 @@ tags:
  - [File Inclusion](/file-inclusion)
  - [SQL Injection - 0x01](/sqli-0x01)
 
-<!-- 
 
- # **HackTheBox**
- - [Lame](/HackTheBox/htb-lame)
-
- -->
+# **HackTheBox**
+ - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
