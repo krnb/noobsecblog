@@ -93,10 +93,14 @@ Additional banner grabbing
 ## Port 53 - DNS
 
 ``` bash
+# Get nameservers and domain name of the IP address
+nslookup
+nslookup> server $target_ip
+nslookup> $target
 # o/p: ns1.example.com
- host -a example.com
+
 # Get all sub-domains
- host -l example.com ns1.example.com
+host -l -a example.com $target_ip # or ns1.example.com
 ```
 
 ## Port 79 - Finger
