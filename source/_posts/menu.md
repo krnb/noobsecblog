@@ -17,8 +17,8 @@ tags:
 
 # **Web Exploitation**
  - [File Inclusion](/file-inclusion)
- - [SQL Injection - 0x01](/sqli-0x01)
-
+ - [SQLi 0x01 - Introduction](/sqli-0x01)
+ - [SQLi 0x02 - Testing & UNION Attacks](/sqli-0x02)
 
 # **HackTheBox**
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
