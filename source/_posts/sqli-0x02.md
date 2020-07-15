@@ -298,7 +298,7 @@ Appending a comment to an email address and sending that to the server
 
 By sending a comment, a db error wasn't presented but rather a "user not found" error. This indicates that even though the rest of the query may be getting terminated, it is working just as intended.
 
-We saw that using a single-quote we were presented with an error, probably so because an extra quote was present in the query. What if a quote and a comment is appended to the email?
+We saw that when we used a single-quote we were presented with a database error, probably so because an extra quote was present in the final query that was passed onto the database for execution. What if a single-quote was used and a comment was appended to it?
 
 ![User Not Found](/sqli-0x02/24_quote_comment.png)
 
@@ -321,12 +321,12 @@ Similar to the previous test, we send a request replacing "AND" with "OR"
 Surprinsingly this printed the same error instead of saying that it found a user. This was surprising because we were able to inject single-quotes into the query.
 
 6. Sleep
-We'll append a `sleep` command along with an `AND` and an `OR`operator and wait for those many seconds to get the response back.
+We'll append a `sleep` command along with an operator either `AND` or `OR` and wait for those many seconds to get the response back.
 The request I sent for testing was:
 ```
 email=test%40test.com'+AND+sleep(5);--+-
 ```
-And similar for *OR* but unfortunately the responses were received right away.
+Unfortunately the responses were received right away. Sleep test did not turn out as expected.
 
 So far we know that we were successfully able to inject a single-quote and a comment. Let's build a little on that to see if we could actually inject and gain something useful out of it.
 
@@ -338,7 +338,7 @@ In `UNION`, you are presented with an error till the number of columns in the ta
 In `ORDER BY`, you get an error when the number of columns in your "order by" clause is more than the number of columns in the table, you sort the output of the entire query as per a column.
 Just like UNION, ORDER BY can also work on the basis of index of the column and you need not know the column names beforehand. 
 
-Each table that exists, has to have atleast two columns, one is "id", another could be anything. This table could potentially have four columns. One is id, for login it requires username and password, and for reset it requires email. But let's start from column one anyway.
+Each table that exists, has to have atleast two columns, one is "id", another could be anything. This table could potentially have four columns. One has to be "id", for login functionality it requires "username" and "password", and for reset it requires "email". But let's start from column one anyway.
 
 Request sent:
 ```
@@ -495,9 +495,9 @@ Another way that you could enumerate for "interesting" columns without doing tab
 SELECT GROUP_CONCAT(column_name,0x3a,table_name,'\r\n') FROM information_schema.columns WHERE column_name like %user%;
 ```
 
-In MySQL, a wildcard in a query uses "%". This would print out any column name which has the term "user" in it (with anything in front or after the term) and its' respective table name. Similar could be done for password - "%pass%" 
+In MySQL, you use "%" as a wildcard in a query. This would print out any column name which has the term "user" in it (with anything in front or after the term) and its' respective table name. Similar could be done for password - "%pass%" 
 
-The same with our example can be achieved as follows:
+Let's try to get all the columns with term "user" in our example:
 
 Request:
 
@@ -531,9 +531,13 @@ Request:
 test%40test.com'+UnIoN+SELECT+1,2,3,CONCAT('\r\n','\r\n',__username_,0x3a,__password_,'\r\n','\r\n','%40test.com')+FROM+operators+LIMIT+0,1--+-
 ```
 
+Output:
+
 ![First Row Fetched](/sqli-0x02/35_row1.png)
 
 A test account in the first row is odd, and although there's a shortcut here, I'll cover that once we develop a script to fetch all the accounts.
+
+In the above query I have used "LIMIT 0,1" to print only 1 row with 0 offset. Offset is the first part, it states which row will it start printing (or SELECTing) from the beginning of the table, the index starts from 0. The second part ("1") states how many rows to print (or SELECT) out of the output.
 
 I've created a python script that will cycle through all the (202) accounts present here and print out the response on the terminal. This requires additional filtering as it does not print out only the credentials, which is what we care about.
 ``` py
@@ -554,14 +558,16 @@ Explanation of the script:
 1. In the first time, I imported the requests module of python to perform automated requests
 2. In the fourth line, I defined an injection function which only returns an injection payload as per the for loop, and changes the OFFSET of the payload with "LIMIT 1". This allows us to cycle through the table and print out only one entry per request.
     1. I've also added a constant string "cred:" in the injection payload which will print as a prefix to every credential dumped for processing purposes.
-3. In the tenth line, a for loop is created to cycle through all the accounts present in the database.
-4. In the eleventh line, email payload is set to be sent in the POST request
-5. In the twelfth line, a request is sent to the required host along with necessary data which we defined above. All of that requests data is assigned to a variable to do further processing on it.
+3. In the eighth line, a for loop is created to cycle through all the accounts present in the database.
+4. In the ninth line, email payload is set to be sent in the POST request
+5. In the tenth line, a request is sent to the required host along with necessary data which we defined above. All of that requests data is assigned to a variable to do further processing on it.
 6. In the last line we are printing out the response on the terminal
 
-To ensure that the script is running we first send only one request (keeping range(0,1)), and check the response.
+To ensure that the script is running in the first place and as expected we first send only one request (keeping range(0,1)), and check the response.
 
 ![SQLi Requester](/sqli-0x02/35_row_auto1.png)
+
+Output:
 
 ![Test Response OK](/sqli-0x02/35_row_auto2.png)
 
@@ -582,9 +588,9 @@ Perfect, let's get them all and save them in a file
 
 As shown above, we were able to get all the credentials that was present in the operators table.
 
-This is not the only way to automate this process, and I'd like to encourage you to come up with different ways to do the same.
+This is not the only way to automate this process, and I'd like to encourage you to come up with different ways to do the same as a fun learning exercise.
 
-The shortcut way to do this would again be using wildcards. Since we know that there are test accounts are present in this table to waste our time, we could ask the database to get the count of rows which does not have a username with "test" in it.
+The shortcut way to do this would again be using wildcards. Since we know that there are test accounts present in this table to waste our time, we could ask the database to get the count of rows which does not have a username with "test" in it.
 
 Query:
 ``` SQL
@@ -599,7 +605,7 @@ test%40abcd.com'+UnIoN+SELECT+1,2,3,CONCAT('\r\n',count(id),'\r\n','%40test.com'
 
 ![Real Accounts Count](/sqli-0x02/36_real1.png)
 
-Out of 202 rows in the table, 200 were fake accounts, with just two useful accounts.
+Out of 202 rows in the table, 200 were fake accounts, and just two useful accounts.
 
 As a sidenote, if you'd like to crack hashes you got via some SQL injection or some another way, it is a good idea to first try to crack them online. It not only saves you time but also resources.
 1. https://crackstation.net/
