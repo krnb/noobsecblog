@@ -613,9 +613,27 @@ As a sidenote, if you'd like to crack hashes you got via some SQL injection or s
 3. https://hashes.com/en/decrypt/hash
 
 
-## Note
+## Summary
+To summarize the post:
+1. To start with testing for SQL injection points, it's necessary to sift through the application and make note of all the user input fields and parameters.
+2. Each parameter and input field must be tested individually.
+3. Send SQL specific characters to cause an error in the query generation that will lead to database causing an error. 
+4. Look for changes in the webpage of error per parameter/input test
 
-Coming up in next 24 hours:
-- a summary + cheatsheet.
+UNION attack checklist:
+1. Use mixed case in case of some filtering
+2. Use "ORDER BY" to get the number of columns
+3. Find printable columns
+4. Get "version()"
+5. Get count of tables in your "database()"
+6. Get tables in your "database()"
+6. Get count of columns per table
+7. Get interesting columns
+8. Get count of rows per interesting table
+9. Get data
+10. Automate queries
+
+## Fin
 
 If some part of it feels unexplained or you did not understand, feel free to contact me :)
+Have a great day, take car, and hack the planet!
