@@ -24,9 +24,6 @@ Check out currently available content on the left.
 
 Contact details available [here](/whoami/#Connect-With-Me)
 
-### Note
-Nothing is perfect. If you'd like me to add a particular thing somewhere to make this resource better for us all, have a request, or came across some mistake on this website, I'd greatly appreciate if you'd raise an issue on the [blog's repo](https://github.com/krnb/noobsecblog)
-
 ## New
 [23 - July - '20] - Third post of the SQL Injection seriese - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
 
@@ -39,3 +36,6 @@ Nothing is perfect. If you'd like me to add a particular thing somewhere to make
 ## Coming soon
 
 - [ ] HTB OSCP-like walkthroughs
+
+## Note
+Nothing is perfect. If you'd like me to add a particular thing somewhere to make this resource better for us all, have a request, or came across some mistake on this website, I'd greatly appreciate if you'd raise an issue on the [blog's repo](https://github.com/krnb/noobsecblog)
