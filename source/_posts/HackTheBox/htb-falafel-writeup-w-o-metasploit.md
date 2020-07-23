@@ -54,7 +54,6 @@ Nothing can catch my attention faster than "cyberlaw.txt". As a side note, don't
 
 ![cyberlaw.txt](/HackTheBox/htb-falafel-writeup-w-o-metasploit/4_cyberlaw.png)
 
-
 From the text file we get a lot of information. Turns out there are two users on this website admin and chris, and chris is able to login as admin without knowing admins' credential (could be an SQLi) as well as gain access to the machine. There are a lot of mail addresses on this message, but apparently no mail service is found, could be something internal.
 
 ## Website Access
@@ -70,6 +69,24 @@ Sending `admin : admin`
 ![Wrong Identification](/HackTheBox/htb-falafel-writeup-w-o-metasploit/5_login1.png)
 
 Looks like we can do user enumeration.
+
+##### User Enumeration
+
+Let's assume that we did not know that a user named chris existed, we could enumerate for users existed on this website using `wfuzz`
+
+```
+wfuzz -c -d "username=FUZZ&password=n00bsec" -w /usr/share/seclists/Usernames/Names/names.txt -u http://10.10.10.73/login.php
+```
+
+![Wfuzz Check](/HackTheBox/htb-falafel-writeup-w-o-metasploit/5_userenum1.png)
+
+Now that we know that wfuzz works, and we can guess that it's not possible for every user came consecuively from the wordlist is not possible, let's filter results as per number of characters - 7074
+
+```
+wfuzz -c -d "username=FUZZ&password=n00bsec" -w /usr/share/seclists/Usernames/Names/names.txt -u http://10.10.10.73/login.php --hh 7074
+```
+
+![User Enumeration](/HackTheBox/htb-falafel-writeup-w-o-metasploit/5_userenum2.png)
 
 #### Testing
 We'll start with testing now.
