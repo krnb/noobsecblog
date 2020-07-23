@@ -1,7 +1,7 @@
 ---
 title: HackTheBox - Cronos Writeup w/o Metasploit
 date: 2020-07-07 01:43:22
-tags: [walkthrough, hackthebox, sql injection, zone transfer]
+tags: [walkthrough, hackthebox, sql injection, zone transfer, oscp-like]
 ---
 
 # HackTheBox - Cronos Writeup w/o Metasploit 

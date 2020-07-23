@@ -636,4 +636,4 @@ UNION attack checklist:
 ## Fin
 
 If some part of it feels unexplained or you did not understand, feel free to contact me :)
-Have a great day, take car, and hack the planet!
+Have a great day, take care, and hack the planet!
