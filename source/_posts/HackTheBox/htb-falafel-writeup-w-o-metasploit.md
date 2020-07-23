@@ -109,7 +109,7 @@ Next step would be get the number of columns, but UNION is blocked regardless of
 
 Although we cannot dump credentials out on the screen, it does not mean we cannot extract data out.
 
-Since this is a SQL database, we could use *substring* - `substring(string, position, length)` function. As the name suggests, substring function takes a "string" and along with position and length, and prints out the characters of a string from the position and length you specify.
+Since this is a SQL database, we could use *substring* - `substring(string, position, length)` function. As the name suggests, substring function takes a "string", or a column (like in this case), along with position, and length, and prints out the characters of a string (or column) from the position and length you specify.
 
 Let's test it with the username field to get a gist, since we know that "admin" exist
 
@@ -117,11 +117,13 @@ Let's test it with the username field to get a gist, since we know that "admin" 
 
 It's important to keep in mind that when our SQL injection is working, we get the error "Wrong identification", and when it does not, we get an error "Try again".
 
-Similarly, we can extract passwords of the corresponding usernames: admin and chris
+Similarly, we can extract the hashes of the users present in here.
 
-We'll test for [a-f0-9] (because hashes) for each character position for the password string, and if we get the error "Wrong identification", then that would indicate that for that position the password has that character in it's place.
+We'll test for [a-f0-9] (because hashes) for each character position for the password column, and if we get the error "Wrong identification", then it would indicate that for position X the password column has that character.
 
-This can be done in BurpSuite Intruder, even in Community Edition which is what I use, let's take a look at finding the first character of the admin's password.
+##### Hash Extraction - BurpSuite Edition
+
+This can be done in BurpSuite Intruder, even in Community Edition which is what I use, let's take a look at finding the first character of the admin's hash.
 
 First we select a login request in BurpSuite and "Send it to intruder" and set our payload position:
 
@@ -139,8 +141,11 @@ We're now ready to "Start Attack"ing. Once we do, we soon find that the first ch
 
 ![Getting The First Character](/HackTheBox/htb-falafel-writeup-w-o-metasploit/8_sub_burp4.png)
 
+We were successfully able to leverage BurpSuite Intruder to extract the first character of admins' hash and can see that it is "0" (Zero).
 
-We were successfully able to leverage BurpSuite Intruder to extract the credentials. We can see that the first character of the admin users' password is "0" (Zero).
+##### Hash Extraction - Python Edition
+
+*Note: Link to the scripts are at the bottom*
 
 Although this is nice and we can perform a little more tweaking and get the entire hash, it would be a LOT faster if we whipped up a script of our own and got this done, which is what we will be doing now.
 
@@ -290,7 +295,9 @@ for i in range(1,33):
 print('\nPass or Hash is:\t'+passwd+'\n')
 ```
 
-Running this script and getting admins' hash:
+The above script is not perfect, maybe you could make it even more dynamic.
+
+Running this script to get the admins' hash:
 
 ![Admins' Hash Extracted](/HackTheBox/htb-falafel-writeup-w-o-metasploit/9_auto2.png)
 
@@ -749,3 +756,10 @@ With this, the code won't be vulnerable anymore as wget is no longer performing 
 Another way to make this secure would've been to not use wget altogether, but rather using something else such as - `file_put_contents()` function of PHP.
 
 Downloading remote files on the server with user controlling which files to be downloaded and browsed to makes a very tricky situation for a developer, and one misconfiguration or a mistake could lead to a compromised web server.
+
+## Fin
+
+Both the scripts are available in this [git repo](https://github.com/krnb/scripts).
+If some part of it feels unexplained or you did not understand, feel free to contact me :)
+
+Take care, have a great day, and keep hackin'!

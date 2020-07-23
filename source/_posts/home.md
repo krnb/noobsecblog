@@ -5,7 +5,7 @@ tags:
 ---
 
 # Hello, world!
-<pre style="display: grid; place-items: center;  background-image: linear-gradient(to left top, #ab00cf, #9635d9, #804bdf, #695ae2, #5366e2, #6465df, #7365db, #7f64d8, #a555cc, #c342b9, #db2aa2, #ec0086); color: black;">
+<pre style="display: grid; place-items: center; color: #828282; background-color: #f2f2f2; ">
  ____________________
 < Welcome to n00bsec >
  --------------------
@@ -17,7 +17,8 @@ tags:
 
 </pre>
 
-Hi, welcome to my blog!
+Hi, welcome to my blog! I hope you liked the cow, feel free to pet it :)
+
 The purpose of this blog is to share my knowledge and things I do with everyone.
 Check out currently available content on the left.
 

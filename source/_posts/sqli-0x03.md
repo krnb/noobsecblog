@@ -119,7 +119,7 @@ Let's test it with the username field to get a gist, since we know that the user
 
 It's important to keep in mind that when our SQL injection is working, we get the error "Wrong identification", and when it does not, we get an error "Try again".
 
-Similarly, we can extract passwords of the users present in this website.
+Similarly, we can extract the hashes of the users present in this website.
 
 We'll test for [a-f0-9] (because hashes) for each character position for the password column, and if we get the error "Wrong identification", then it would indicate that for position X the password column has that character.
 
@@ -202,6 +202,12 @@ If it's not an alphabet, it's checked if the number belongs to [0-4] group or [5
 Once the group is sent back, SQLstring is used to generate payloads for characters in only those groups for X position. This reduces the amount of requests sent to the server, and we extract the hash much faster.
 
 These checks are done using "ord". Ordinal numbers are just decimal numbers. We convert the output of the substring to ord and perform a check if it's greater than 58, ascii(9) = decimal(57), thus checking if the character in that position is an alphabet.
+
+| Numbers (dec hex ascii) | Alphabets (dec hex ascii) |
+|-------------------|-------------------|
+| ![](/HackTheBox/htb-falafel-writeup-w-o-metasploit/13_ord1.png) | ![](/HackTheBox/htb-falafel-writeup-w-o-metasploit/13_ord2.png) |
+
+Check out `man ascii` to view the entire table.
 
 ``` python
 import requests
@@ -294,7 +300,7 @@ for i in range(1,33):
 print('\nPassword or Hash is:\t'+passwd+'\n')
 ```
 
-Running this script and getting admins' hash:
+Running this script to get the admins' hash:
 
 ![Admins' Hash Extracted](/HackTheBox/htb-falafel-writeup-w-o-metasploit/9_auto2.png)
 
