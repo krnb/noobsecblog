@@ -19,7 +19,7 @@ tags:
  - [File Inclusion](/file-inclusion)
  - [SQLi 0x01 - Introduction](/sqli-0x01)
  - [SQLi 0x02 - Testing & UNION Attacks](/sqli-0x02)
-<!-- - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03) -->
+ - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
 
 # **HackTheBox**
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
