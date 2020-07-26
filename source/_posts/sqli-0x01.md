@@ -170,3 +170,5 @@ Regarding this series...it will go in depth from the basics to as advanced as I 
 This series is not just to teach you about SQL injection but are also my personal notes if that gives you any more confidence about the quality of this.
 
 Have a great day, take care and hack the planet!
+
+Read the next post [SQL Injection 0x02 - Testing & UNION Attacks](/sqli-0x02)

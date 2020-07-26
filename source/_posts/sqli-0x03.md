@@ -1,18 +1,18 @@
 ---
-title: SQL Injection 0x03 - Blind Boolean Injection Attacks
+title: SQL Injection 0x03 - Blind Boolean Attacks
 date: 2020-07-18 14:37:47
 tags: [sqli, sql injeciton, web attacks]
 ---
 
 
-# SQL Injection 0x03 - Blind Boolean Injection Attacks
+# SQL Injection 0x03 - Blind Boolean Attacks
 
-## Introduction - What Is Blind SQL Injection?
+## Introduction
 Blind SQL injection are the type of SQL injections attacks wherein no database error is received from the web responses, there are either subtle or no changes to the web page upon sending injection payloads. Since these changes are either subtle or non-existent, it becomes harder to identify and exploit these vulnerabilities but are certainly not impossible.
 
-In this blog post I have covered blind boolean SQL injection attacks, in which you receive subtle changes in the responses suggesting if the vulnerability is present, and if an injection payload is working or not.
+Hi, welcome to the third part of the SQL injection series, if you haven't read the first two posts and are a complete beginner I'd suggest you read them first - [SQL Injection 0x01 - Introduction](/sqli-0x01) and [SQL Injection 0x02 - Testing & UNION Attacks](/sqli-0x02). In this blog post I have covered blind boolean SQL injection attacks, as the title suggests, in which you receive subtle changes in the responses suggesting if the vulnerability is present, and if an injection payload is working or not.
 
-For this post I decided to use [Falafel](https://app.hackthebox.eu/machines/124) machine from [HackTheBox](https://app.hackthebox.eu/getting-started) platform as the example to explain blind boolean SQL injection.
+For this post I decided to use [Falafel](https://app.hackthebox.eu/machines/124) machine from [HackTheBox](https://app.hackthebox.eu/getting-started) platform as the example to explain blind boolean SQL injection. If you would like to follow along and then finally hack the machine, I've posted the writeup [here](/HackTheBox/htb-falafel-writeup-w-o-metasploit) 
 
 I will start from identification of interactable fields, test these fields, and then completely exploit it using different methods (BurpSuite Intruder and Custom Python Script)
 
@@ -307,6 +307,40 @@ Running this script to get the admins' hash:
 By making a script with extra checks, it helped us save 38 seconds for just one account, if there were a lot of accounts in here that would add up to some considerable amount of time saved.
 
 The above script is not perfect, maybe you could make it even more dynamic.
+
+## Summary
+To summarize this post:
+1. Identify all the fields that a user can interact with
+    1. Take a look at all the input fields
+    2. Consider all the parameters being passed to the backend
+    3. Consider HTTP headers like User-Agent and Cookies, when application looks like it's tracking a user
+2. Test each point individually with different characters and conditions
+3. Use functions like `substring` when UNION is not possible
+4. When dealing with repetitive tasks, or a lot of data/ queries, use automation
+
+**Testing Checklist**:
+
+| Name | Character | Function |
+| ------ | ----------- | ---------- |
+| Single quote | `'` | String terminator |
+| Semi colon | `;` | Query terminator
+| Comment | `-- -` | Removing rest of the query |
+| Single quote with a comment | `'-- -` | End a string and remove rest of the query |
+| Single quote, semi colon and a comment | `';-- -` | End a string, end query, and remove rest of the query |
+| OR operator | `OR 1=1-- -` | For integers, `true` test |
+| OR operator | `OR 1=2-- -` | For integers, `false` test |
+| OR operator | `' OR '1'='1'-- -` | For strings, `test` test |
+| AND operator | `AND 1=1-- -` | For integers, `true` test |
+| AND operator | `AND 1=2-- -` | For integers, `false` test |
+| AND operator | `' AND '1'='1'-- -` | For strings, `true` test |
+| Sleep function | `OR sleep(5)-- -` | Blind test |
+
+**Blind boolean hack steps**:
+1. Identify "right" and "wrong" errors.
+2. Test if `substring` is working with the username column
+3. Run a test round for the first position of the password column, which would be hash
+4. Write a script to perform the same
+5. Update the script to cycle through each character (a-f0-9) for 32 positions and print it out.
 
 ## Fin
 

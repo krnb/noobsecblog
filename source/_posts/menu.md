@@ -14,7 +14,7 @@ tags:
 - [Escaping Jailed Shells](/jailbreak)
 - [Windows Privilege Escalation](/privesc-windows)
 - [Linux Privilege Escalation](/privesc-linux)
-- [Buffer Overflow](/bof/)
+- [Win 32-Bit Buffer Overflow](/bof)
 
 # **Web Exploitation**
  - [File Inclusion](/file-inclusion)

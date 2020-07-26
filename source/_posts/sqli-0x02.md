@@ -7,8 +7,9 @@ tags: [sqli, sql injeciton, web attacks]
 # SQL Injection 0x02 - Testing and UNION Attacks
 
 ## Introduction
+Hi, welcome to the second post of the sql injection series, if you haven't read the first part of the series, you can read it [here](/sqli-0x01).
 
-This post is the second part of the sql injection series. In this post I've focused on how to perform testing for error-based SQL injection and then moved on to a general process of performing UNION attacks. I've also covered how you can automate data extraction when the amount of data you are dealing with is a lot.
+In this post I have focused on how to perform testing for error-based SQL injection and then moved on to a general process of performing UNION attacks. I have also covered how you can automate data extraction when the amount of data you are dealing with is a lot.
 
 The post contains two classic UNION injection examples from identification to exploitation of the same. Both the examples are separated into their own parts to ensure that a reader of any experience can follow along. At the end of the post I've put up a small table of new things I've introduced in this post and what they are. I've also put up a checklist of steps that you should perform when testing a parameter and when exploiting UNION-based SQL injections.
 
@@ -653,5 +654,7 @@ To summarize the post:
 
 ## Fin
 
-If some part of it feels unexplained or you did not understand, feel free to contact me :)
+If you would like to learn more, you can move on to the third post - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03) 
+
+If some part of this post feels unexplained or you did not understand, feel free to contact me :)
 Have a great day, take care, and hack the planet!
