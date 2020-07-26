@@ -4,9 +4,10 @@ date: 2020-06-25 19:05:27
 tags:
 ---
 
-- [#whoami](/whoami)
+- [whoami](/whoami)
 
 # **OSCP**
+## OSCP Posts
 - [Hack OSCP](/hack-oscp)
 - [OSCP Journey](/oscp-journey)
 - [Ultimate Cheatsheet](/oscp-cheatsheet)
@@ -17,8 +18,8 @@ tags:
 
 # **Web Exploitation**
  - [File Inclusion](/file-inclusion)
- - [SQLi 0x01 - Introduction](/sqli-0x01)
- - [SQLi 0x02 - Testing & UNION Attacks](/sqli-0x02)
+ - [SQL Injection 0x01 - Introduction](/sqli-0x01)
+ - [SQL Injection 0x02 - Testing & UNION Attacks](/sqli-0x02)
  - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
 
 # **HackTheBox**

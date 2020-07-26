@@ -50,22 +50,22 @@ SELECT <column_names/wildcard>
 FROM <table_name>
 
 # Specifies the condition or logic as per which rows (data) from columns specified should be retrieved
-[WHERE]
+[WHERE <condition> <operator> <condition>]
 
 # Concatenates two SELECT queries. Number of rows fetched by both the queries should be same.
-[UNION Query]
+[UNION <SELECT>]
 
 # Group or aggregate the results by a column name or position
-[GROUP BY]
+[GROUP BY <column number/name>]
 
 # This is the same as putting a where condition
-[HAVING]
+[HAVING <condition>]
 
 # Alter the results by the column name or position
-[ORDER BY]
+[ORDER BY <column number/name>]
 
 # Number of rows to display in the output
-[LIMIT]
+[LIMIT <offset>,<number of rows>]
 ```
 
 Example of a `SELECT` query:
@@ -105,12 +105,18 @@ If both of the statements are either true or false, the result will be true.
 
 Usage of these both will help us ensuring an SQL injection is present.
 
+Just to give a brief about what the `NOT` operator is used for, let's take an example of a table consisting of all the people living in some country. You want a list of all the people in that country whose job title is NOT *Thought Leader*. A query for that would look something like this:
+
+``` SQL
+SELECT first_name, last_name FROM population WHERE job is NOT "Thought Leader";
+```
+
 ## What is SQL Injection?
-A web based attack in which the malicious end-user enters an SQL query which would append to the existing query in the logic tier of the application and this now new (malicious) query is passed on to the database which executes it, if it's a fully-working query and not broken syntactically, and returns the result back to the end-user
+SQL injection is a web based attack in which the malicious end-user enters an SQL query (in an input field or a parameter) which would append to the existing query in the logic tier of the application and this now new (malicious) query is passed on to the database which executes it, if it's a fully-working query and not broken syntactically, and returns the result back to the end-user.
 
 ![DROP Tables. ](/sqli-0x01/exploits_of_a_mom.png)
-<span style="font-size: small;">Credit to <a href="https://xkcd.com/327/" target="_blank">XKCD Comics</a>. If you've never checked them out, YOU SHOULD!</span>
-
+<div style="text-align: center;"><span style="font-size: small;">Credit to <a href="https://xkcd.com/327/" target="_blank">XKCD Comics</a>. If you've never checked them out, YOU SHOULD!</span></div>
+<br>
 Considering the above comic, although destructive and not very beneficial, it still is a SQL injection.
 
 When a web application fails to properly sanitize the user input (parameters that are passed to the SQL statement or query), the malicious SQL query will be executed. This query will be executed with the same rights as the web server.
