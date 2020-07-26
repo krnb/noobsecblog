@@ -25,17 +25,16 @@ Check out currently available content on the left.
 Contact details available [here](/whoami/#Connect-With-Me)
 
 ## New
-[23 - July - '20] - Third post of the SQL Injection seriese - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
+[26 - July - '20] - Buffer Overflow post updated to a step-by-step hack guide - [Win 32-bit Buffer Overflow](/bof)
+
+[23 - July - '20] - Third post of the SQL Injection series - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
 
 [23 - July - '20] - HackTheBox - Falafel Writeup w/o Metasploit + Vulnerability Analysis available [here](/HackTheBox/htb-falafel-writeup-w-o-metasploit/)
 
-[14 - July - '20] - Second post of the SQL Injection series - [SQL Injection 0x02 - Testing And UNION Attacks](/sqli-0x02)
-
-[09 - July - '20] - HackTheBox - Cronos Writeup w/o Metasploit + Vulnerability Analysis available [here](/HackTheBox/htb-cronos/)
-
 ## Coming soon
-
+- [ ] SQL Injection Cheatsheet
+- [ ] Linux NFS Privilege Escalation
 - [ ] HTB OSCP-like walkthroughs
 
 ## Note
-Nothing is perfect. If you'd like me to add a particular thing somewhere to make this resource better for us all, have a request, or came across some mistake on this website, I'd greatly appreciate if you'd raise an issue on the [blog's repo](https://github.com/krnb/noobsecblog)
+Nothing is perfect. If you'd like me to add a particular thing somewhere to make this resource better for us all, have a request, or came across some mistake on this website, I'd greatly appreciate if you'd raise an issue on the [blog's repo](https://github.com/krnb/noobsecblog) or comment on that blog post.
