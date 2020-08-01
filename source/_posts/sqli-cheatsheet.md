@@ -38,6 +38,14 @@ tags: [sqli, sql injection, cheatsheet, web attacks]
 | `ord()` | Convert the value to ordinal (decimal) | 
 
 
+## Number of Columns
+
+| Method | Description | 
+| ------ | ---------- |
+| `ORDER BY 3-- -` | For numbers. If column index provided exceeds the number of column present in the table, there will be an error |
+| `' ORDER BY 3-- -` | For string. If column index provided exceeds the number of column present in the table, there will be an error |
+| ` UNION SELECT 1,2,3-- -` | For numbers. It will throw an error till right number of columns haven't been "SELECT"ed |
+
 ## Database Contents
 *Works with UNION queries*
 
