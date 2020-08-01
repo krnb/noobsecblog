@@ -21,7 +21,10 @@ tags:
  - [SQL Injection 0x01 - Introduction](/sqli-0x01)
  - [SQL Injection 0x02 - Testing & UNION Attacks](/sqli-0x02)
  - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
-
+ - [SQL Injection Cheatsheet](/sqli-cheatsheet)
 # **HackTheBox**
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
  - [HackTheBox - Falafel](/HackTheBox/htb-falafel-writeup-w-o-metasploit)
+
+# **Misc**
+ - [Linux Tips And Tricks](/linux-tips)

@@ -25,14 +25,13 @@ Check out currently available content on the left.
 Contact details available [here](/whoami/#Connect-With-Me)
 
 ## New
+[01 - August - '20] - MySQL injection cheatsheet - [read here](/sqli-cheatsheet)
+
+[01 - August - '20] - Linux tips and tricks to make your life easier - [read here](/linux-tips)
+
 [26 - July - '20] - Buffer Overflow post updated to a step-by-step hack guide - [Win 32-bit Buffer Overflow](/bof)
 
-[23 - July - '20] - Third post of the SQL Injection series - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
-
-[23 - July - '20] - HackTheBox - Falafel Writeup w/o Metasploit + Vulnerability Analysis available [here](/HackTheBox/htb-falafel-writeup-w-o-metasploit/)
-
 ## Coming soon
-- [ ] SQL Injection Cheatsheet
 - [ ] Linux NFS Privilege Escalation
 - [ ] HTB OSCP-like walkthroughs
 
