@@ -209,9 +209,11 @@ smbclient -L \\$ip -U <user>
 Connecting to a share
 ``` bash
 # Anonymously
-smbclient \\\\$ip\\share -N
+smbclient //$ip/share -N
 # Authenticated
-smbclient \\\\$ip\\share -U <username>
+smbclient //$ip/share -U <username>
+# Protocol Error?
+smbclient //$ip/share -N --option='client min protocol=NT1'
 ```
 
 ## Port 161 - SNMP

