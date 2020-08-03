@@ -99,7 +99,7 @@ Condition column - statement1_result `AND` statement2_result
 | *true* `AND` *true* | True ✔ |
 | *true* `AND` *false* | False ❌ |
 | *false* `AND` *true* | False ❌ |
-| *false* `AND` *false* | True ✔ |
+| *false* `AND` *false* | False ❌ |
 
 If both of the statements are either true or false, the result will be true.
 

@@ -23,6 +23,7 @@ tags: [sqli, sql injection, cheatsheet, web attacks]
 | AND operator | `AND 1=1-- -` | For integers, `true` test |
 | AND operator | `AND 1=2-- -` | For integers, `false` test |
 | AND operator | `' AND '1'='1'-- -` | For strings, `true` test |
+| Arithmetic | `?id=2-1` | For integers, arithmetic operation would load the resultant post |
 | Sleep function | `OR sleep(5)-- -` | Blind test |
 
 ## Functions

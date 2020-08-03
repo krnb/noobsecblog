@@ -25,6 +25,7 @@ tags:
 # **HackTheBox**
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
  - [HackTheBox - Falafel](/HackTheBox/htb-falafel-writeup-w-o-metasploit)
+ - [HackTheBox - Lame](/HackTheBox/htb-lame)
 
 # **Misc**
  - [Linux Tips And Tricks](/linux-tips)

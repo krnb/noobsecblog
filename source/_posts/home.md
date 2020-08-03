@@ -25,14 +25,13 @@ Check out currently available content on the left.
 Contact details available [here](/whoami/#Connect-With-Me)
 
 ## New
+[03 - August - '20] - A new writeup focusing on enumeration - [HackTheBox - Lame w/o Metasploit](/HackTheBox/htb-lame/)
+
 [01 - August - '20] - MySQL injection cheatsheet - [read here](/sqli-cheatsheet)
 
 [01 - August - '20] - Linux tips and tricks to make your life easier - [read here](/linux-tips)
 
-[26 - July - '20] - Buffer Overflow post updated to a step-by-step hack guide - [Win 32-bit Buffer Overflow](/bof)
-
 ## Coming soon
-- [ ] Linux NFS Privilege Escalation
 - [ ] HTB OSCP-like walkthroughs
 
 ## Note
