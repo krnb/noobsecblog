@@ -7,7 +7,6 @@ tags:
 - [whoami](/whoami)
 
 # **OSCP**
-## OSCP Posts
 - [Hack OSCP](/hack-oscp)
 - [OSCP Journey](/oscp-journey)
 - [Ultimate Cheatsheet](/oscp-cheatsheet)
@@ -22,10 +21,12 @@ tags:
  - [SQL Injection 0x02 - Testing & UNION Attacks](/sqli-0x02)
  - [SQL Injection 0x03 - Blind Boolean Attacks](/sqli-0x03)
  - [SQL Injection Cheatsheet](/sqli-cheatsheet)
-# **HackTheBox**
+
+# **Write-ups**
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
  - [HackTheBox - Falafel](/HackTheBox/htb-falafel-writeup-w-o-metasploit)
  - [HackTheBox - Lame](/HackTheBox/htb-lame)
+ - [VulnHub - Infosec Prep OSCP](/infosec-prep-oscp)
 
 # **Misc**
  - [Linux Tips And Tricks](/linux-tips)
