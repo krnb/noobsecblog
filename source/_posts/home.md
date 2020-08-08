@@ -25,11 +25,11 @@ Check out currently available content on the left.
 Contact details available [here](/whoami/#Connect-With-Me)
 
 ## New
+[08 - August - '20] - Infosec Prep OSCP Giveaway Writeup - [read here](/infosec-prep-oscp)
+
 [03 - August - '20] - A new writeup focusing on enumeration - [HackTheBox - Lame w/o Metasploit](/HackTheBox/htb-lame/)
 
 [01 - August - '20] - MySQL injection cheatsheet - [read here](/sqli-cheatsheet)
-
-[01 - August - '20] - Linux tips and tricks to make your life easier - [read here](/linux-tips)
 
 ## Coming soon
 - [ ] HTB OSCP-like walkthroughs
