@@ -1,7 +1,7 @@
 ---
 title: HackTheBox - Lame Writeup w/o Metasploit
 date: 2020-08-01 19:03:06
-tags: [hackthebox, walkthrough, smb]
+tags: [hackthebox, walkthrough, smb, oscp-like]
 ---
 
 # HackTheBox - Lame Writeup w/o Metasploit
