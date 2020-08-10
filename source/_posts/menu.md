@@ -23,9 +23,10 @@ tags:
  - [SQL Injection Cheatsheet](/sqli-cheatsheet)
 
 # **Write-ups**
+ - [HackTheBox - Lame](/HackTheBox/htb-lame)
+ - [HackTheBox - Bashed](/HackTheBox/htb-bashed)
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
  - [HackTheBox - Falafel](/HackTheBox/htb-falafel-writeup-w-o-metasploit)
- - [HackTheBox - Lame](/HackTheBox/htb-lame)
  - [VulnHub - Infosec Prep OSCP](/infosec-prep-oscp)
 
 # **Misc**
