@@ -203,6 +203,8 @@ smbmap -H $ip
 smbmap -H $ip -R <share>
 smbmap -H $ip -d <domain> -u <user> -p <password>
 smbclient -L \\$ip -N
+# Protocol Error?
+smbclient -L \\$ip -N --option='client min protocol=NT1'
 smbclient -L \\$ip -U <user>
 ```
 

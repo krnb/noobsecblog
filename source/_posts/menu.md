@@ -27,6 +27,7 @@ tags:
  - [HackTheBox - Bashed](/HackTheBox/htb-bashed)
  - [HackTheBox - Cronos](/HackTheBox/htb-cronos)
  - [HackTheBox - Falafel](/HackTheBox/htb-falafel-writeup-w-o-metasploit)
+ - [HackTheBox - Bart](/HackTheBox/htb-bart)
  - [VulnHub - Infosec Prep OSCP](/infosec-prep-oscp)
 
 # **Misc**

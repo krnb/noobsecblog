@@ -25,11 +25,11 @@ Check out currently available content on the left.
 Contact details available [here](/whoami/#Connect-With-Me)
 
 ## New
+[10 - August - '20] - A new HTB OSCP-like writeup - [HackTheBox - Bart w/o Metasploit](/HackTheBox/htb-bart/)
+
 [10 - August - '20] - A new HTB OSCP-like writeup - [HackTheBox - Bashed w/o Metasploit](/HackTheBox/htb-bashed/)
 
 [08 - August - '20] - Infosec Prep OSCP Giveaway Writeup - [read here](/infosec-prep-oscp)
-
-[03 - August - '20] - A new writeup focusing on enumeration - [HackTheBox - Lame w/o Metasploit](/HackTheBox/htb-lame/)
 
 ## Coming soon
 - [ ] HTB OSCP-like walkthroughs
