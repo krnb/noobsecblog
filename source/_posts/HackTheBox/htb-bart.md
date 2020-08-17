@@ -802,6 +802,14 @@ if __name__ == '__main__':
 
 ```
 
+The script requires you to make it executable. Once the script is run as-is, it will throw the usage out:
+
+![Bruteforcer Usage](/HackTheBox/htb-bart/brute0.png)
+
+For the demo I have used a super small wordlist, the script will show the number of request to be made, the arrow goes further towards the completion per request, and once found it will break out and print out the password on the terminal, like below:
+
+![Password Found](/HackTheBox/htb-bart/brute.png)
+
 If you have trouble understanding which interal function does what, Python documentation is a fantastic resource to check out.
 
 ## Lessons Learned
