@@ -726,7 +726,7 @@ Now let's talk about where it went wrong:
 
 My script was shabby and not so aesthetically pleasing, so I took some parts of mine (CSRF token regex, setting cookies, session generation, not expanding wordlist) and stuck it in 0xdfs' script. You can check out his script [here](https://0xdf.gitlab.io/2018/07/15/htb-bart.html#brute-forcer-source)
 
-You can download my script from my [scripts repo](https://github.com/krnb/scripts)
+You can download my script from my [scripts repo](https://github.com/krnb/scripts/tree/master/HTB/bart)
 
 ``` python
 #!/usr/bin/env python3

