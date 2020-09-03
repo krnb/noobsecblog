@@ -5,6 +5,7 @@ tags:
 ---
 
 - [whoami](/whoami)
+- [Getting Into Cybersecurity - Red Team Edition](/starting-point)
 
 # **OSCP**
 - [Hack OSCP](/hack-oscp)
