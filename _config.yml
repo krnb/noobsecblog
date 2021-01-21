@@ -13,13 +13,13 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://noobsec.net
+url: https://www.noobsec.net
 root: /
 permalink: :title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -99,3 +99,11 @@ theme: book
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  template: ./themes/book/layout/sitemap_template.xml
+  rel: true
+  tags: true
+  categories: true
