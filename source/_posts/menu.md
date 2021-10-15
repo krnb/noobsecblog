@@ -25,6 +25,8 @@ tags:
 
 # **Active Directory**
 - [PowerView Cheatsheet](/powerview-cheatsheet)
+- [Introduction to Active Directory](/activedirectory/ad-intro)
+- [Introduction to Kerberos](/activedirectory/kerberos-intro)
 
 ## **Write-ups**
 - [HackTheBox - Lame](/HackTheBox/htb-lame)
