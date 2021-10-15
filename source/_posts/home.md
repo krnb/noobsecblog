@@ -25,11 +25,9 @@ Check out currently available content on the left.
 Contact details available [here](/whoami/#Connect-With-Me)
 
 ## New
-[28 - December - '20 ] - [PowerView Cheatsheet](/powerview-cheatsheet) has been added
+[15 - October - '21 ] - [Introduction to Active Directory](/activedirectory/ad-intro) has been added
 
-[28 - December - '20 ] - [Windows Privesc](/privesc-windows) has been updated
-
-[10 - August - '20] - A new HTB OSCP-like writeup - [HackTheBox - Bart w/o Metasploit](/HackTheBox/htb-bart/)
+[15 - October - '21 ] - [Introduction to Kerberos](/activedirectory/kerberos-intro) has been added
 
 
 ## Coming soon
