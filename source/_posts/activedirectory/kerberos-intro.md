@@ -48,6 +48,8 @@ Domain authentication consist of the first two steps displayed in the diagram ab
 
 Whenever a user enter the domain and wants to log into the domain, the Kerberos authentication process will kick off. The user will start the process by taking its current system time and then encrypt the time with the hash of the user and send this to the KDC to request for a TGT. This is also known as **authenticator** or *pre-auth data*. This request is called *AS-REQ*.
 
+![Authenticator / AS-REQ](authenticator.png)
+
 As soon as the KDC receives this encrypted request, it looks up the copy of the users' hash and tries to decrypt the authenticator. If it is successful then KDC checks the system time in the request and compares it against its' own and if that time is within 5 minutes then it assumes that this is a legitimate request and from a legitimate user.
 
 Once the request is validated successfully, KDC then returns two things in the response - a ticket called TGT (*AS-REP*), session key. The TGT consist of the SID of the user account, SIDs of the groups the user is a part of, as well as copy of the session key. The TGT is encrypted using the hash of the KDC (*KRBTGT*) and the session key is encrypted using the user hash.
@@ -64,6 +66,8 @@ Once the user receives these two items - TGT and encrypted session key, session 
 Now that the user has the TGT as well as the session key, it can go ahead and request for service tickets to access services in the domain. This consist of the third and the fourth step of the process.
 
 Once the user knows which service it wants to access, it takes the servicePrincipalName (SPN) which is mapped to the service account (a user account or machine account) being used to provide the service in the domain. It takes the session key it had received previously, creates a new authenticator (encrypting the system time with the session key) and sends the request (TGS-REQ) to the KDC along with the TGT it had received.
+
+![Authenticator](authenticator2.png)
 
 The KDC decrypts the TGT it received, extracts the session key and then decrypts the authenticator and checks the system time against time present in the authenticator and then moves on to finding the service for which the SPN was sent. If it is able to find the service, it sends a service ticket back to the user (TGS-REP). 
 
