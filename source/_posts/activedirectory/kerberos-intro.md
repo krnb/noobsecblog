@@ -42,13 +42,17 @@ Kerberos authentication process can be divided into three parts - authenticating
 
 #### Authenticating to the Domain
 
-Domain authentication consist of the first two steps displayed in the diagram above. This part of the process is handled by the Authentication Service (AS) of the KDC.
+Domain authentication consist of the first two steps displayed in the diagram above. This part of the process is handled by the **Authentication Service** (AS) of the KDC.
 
-Whenever a user enter the domain and wants to log into the domain, the Kerberos authentication process will kick off. The user will start the process by taking its current system time and then encrypt the time with the hash of the user and send this to the KDC to request for a TGT. This is also known as authenticator or pre-auth data. This request is called AS-REQ.
+![KDC](kdc.png)
+
+Whenever a user enter the domain and wants to log into the domain, the Kerberos authentication process will kick off. The user will start the process by taking its current system time and then encrypt the time with the hash of the user and send this to the KDC to request for a TGT. This is also known as **authenticator** or *pre-auth data*. This request is called *AS-REQ*.
 
 As soon as the KDC receives this encrypted request, it looks up the copy of the users' hash and tries to decrypt the authenticator. If it is successful then KDC checks the system time in the request and compares it against its' own and if that time is within 5 minutes then it assumes that this is a legitimate request and from a legitimate user.
 
-Once this is decided, KDC then returns a ticket called TGT in response (AS-REP) along with a session key. The TGT consist of the SID of the user account, SIDs of the groups the user is a part of, as well as the session key. The TGT is encrypted using the hash of the KDC (KRBTGT) and a copy of session key which is sent in the response is encrypted using the user hash.
+Once the request is validated successfully, KDC then returns two things in the response - a ticket called TGT (*AS-REP*), session key. The TGT consist of the SID of the user account, SIDs of the groups the user is a part of, as well as copy of the session key. The TGT is encrypted using the hash of the KDC (*KRBTGT*) and the session key is encrypted using the user hash.
+
+![TGT Respone - AS-REP](as-rep.png)
 
 Once the user receives these two items - TGT and encrypted session key, session key is decrypted by the user and both are stored in Local Security Authority (LSA) memory to be specific.
 
