@@ -76,7 +76,7 @@ Disabling Defender even if for a small amount of time puts the assets at risk, i
 | `Get-NetOU [-FullData]` | Get OUs |
 | `(Get-NetOU -Name 'test').gplink` | Get gplink of an OU to get GPOs applied to it |
 | `Get-NetGPO -GPOName '{asd21321asdsd3as2d1}'` | Get GPO of a gplink |
-| `((Get-NetOU -FullData <OU_NAME>).gplink -split "cn=" -split ",")[1] | Get-NetGPO` | Get GPO of an OU using gplink |
+| `((Get-NetOU -FullData <OU_NAME>).gplink -split "cn=" -split ",")[1] \| Get-NetGPO` | Get GPO of an OU using gplink |
 
 ### ACL Enumeration
 
@@ -101,6 +101,14 @@ Disabling Defender even if for a small amount of time puts the assets at risk, i
 | `Find-LocalAdminAccess` | Get list of all machines where current user has local admin access |
 | `Invoke-EnumerateLocalAdmin` | Find all admins on all computers |
 | `Invoke-UserHunter [-GroupName <group_name>] [-CheckAccess]` | Find machines where a domain admin has a session, checkaccess tells you if you also have access to that machine |
+
+
+## Finding Sessions
+
+| Command | Description |
+| ------------- | ------- | 
+| `Get-NetSession [-ComputerName <comp_name>]` | Get list of active sessions on a system |
+| `Get-LoggedOnLocal [-ComputerName <comp_name>]` | Get list of users logged on a system |
 
 
 ## Privilege Escalation
