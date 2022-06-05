@@ -13,7 +13,7 @@ Hello there! Welcome to the first post in the Active Directory series, this post
 
 ## Active Directory Overview
 
-Active Directory (AD) or as Microsoft calls it Active Directory Domain Services (AD DS) is a directory service which holds all the information about the environement and supports the network and its users in various forms. Think of it as a yellow pages book but for the organizations' network. It holds different kinds of information about the organization such as users, groups, computers, access control lists, passwords of the users, and other supporting information.
+Active Directory (AD) or as Microsoft calls it Active Directory Domain Services (AD DS) is a directory service which holds all the information about the environment and supports the network and its users in various forms. Think of it as a yellow pages book but for the organizations' network. It holds different kinds of information about the organization such as users, groups, computers, access control lists, passwords of the users, and other supporting information.
 
 In essence, AD is a centralized database which provides information via Lightweight Directory Access Protocol (LDAP) and is the backbone of many dependant applications/ services which accesses this information via LDAP.
 
